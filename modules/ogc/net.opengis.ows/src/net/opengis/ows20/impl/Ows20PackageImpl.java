@@ -59,6 +59,7 @@ import net.opengis.ows20.UnNamedDomainType;
 import net.opengis.ows20.ValueType;
 import net.opengis.ows20.ValuesReferenceType;
 import net.opengis.ows20.WGS84BoundingBoxType;
+import net.opengis.ows20.util.Ows20Validator;
 import net.opengis.ows20.Ows20Factory;
 import net.opengis.ows20.Ows20Package;
 
@@ -684,6 +685,15 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
 
         // Initialize created meta-data
         theOws20Package.initializePackageContents();
+
+        // Register package validator
+        EValidator.Registry.INSTANCE.put
+            (theOws20Package, 
+             new EValidator.Descriptor() {
+                 public EValidator getEValidator() {
+                     return Ows20Validator.INSTANCE;
+                 }
+             });
 
         // Mark meta-data to indicate it can't be changed
         theOws20Package.freeze();
@@ -2114,6 +2124,15 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
      */
     public EAttribute getGetCapabilitiesType_UpdateSequence() {
         return (EAttribute)getCapabilitiesTypeEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getGetCapabilitiesType_BaseUrl() {
+        return (EAttribute)getCapabilitiesTypeEClass.getEStructuralFeatures().get(5);
     }
 
     /**
@@ -3640,6 +3659,7 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
         createEReference(getCapabilitiesTypeEClass, GET_CAPABILITIES_TYPE__ACCEPT_FORMATS);
         createEReference(getCapabilitiesTypeEClass, GET_CAPABILITIES_TYPE__ACCEPT_LANGUAGES);
         createEAttribute(getCapabilitiesTypeEClass, GET_CAPABILITIES_TYPE__UPDATE_SEQUENCE);
+        createEAttribute(getCapabilitiesTypeEClass, GET_CAPABILITIES_TYPE__BASE_URL);
 
         getResourceByIdTypeEClass = createEClass(GET_RESOURCE_BY_ID_TYPE);
         createEAttribute(getResourceByIdTypeEClass, GET_RESOURCE_BY_ID_TYPE__RESOURCE_ID);
@@ -3879,13 +3899,13 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
         initEAttribute(getAbstractReferenceBaseType_Type(), theXMLTypePackage.getString(), "type", "simple", 0, 1, AbstractReferenceBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(acceptFormatsTypeEClass, AcceptFormatsType.class, "AcceptFormatsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getAcceptFormatsType_OutputFormat(), this.getMimeType(), "outputFormat", null, 0, 1, AcceptFormatsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAcceptFormatsType_OutputFormat(), ecorePackage.getEString(), "outputFormat", null, 0, -1, AcceptFormatsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(acceptLanguagesTypeEClass, AcceptLanguagesType.class, "AcceptLanguagesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getAcceptLanguagesType_Language(), theXMLTypePackage.getLanguage(), "language", null, 1, 1, AcceptLanguagesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAcceptLanguagesType_Language(), ecorePackage.getEString(), "language", null, 1, -1, AcceptLanguagesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(acceptVersionsTypeEClass, AcceptVersionsType.class, "AcceptVersionsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getAcceptVersionsType_Version(), this.getVersionType(), "version", null, 1, 1, AcceptVersionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getAcceptVersionsType_Version(), ecorePackage.getEString(), "version", null, 1, -1, AcceptVersionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(additionalParametersBaseTypeEClass, AdditionalParametersBaseType.class, "AdditionalParametersBaseType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getAdditionalParametersBaseType_AdditionalParameter(), this.getAdditionalParameterType(), null, "additionalParameter", null, 1, 1, AdditionalParametersBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4051,6 +4071,7 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
         initEReference(getGetCapabilitiesType_AcceptFormats(), this.getAcceptFormatsType(), null, "acceptFormats", null, 0, 1, GetCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getGetCapabilitiesType_AcceptLanguages(), this.getAcceptLanguagesType(), null, "acceptLanguages", null, 0, 1, GetCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getGetCapabilitiesType_UpdateSequence(), this.getUpdateSequenceType(), "updateSequence", null, 0, 1, GetCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getGetCapabilitiesType_BaseUrl(), theXMLTypePackage.getString(), "baseUrl", null, 0, 1, GetCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(getResourceByIdTypeEClass, GetResourceByIdType.class, "GetResourceByIdType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getGetResourceByIdType_ResourceID(), theXMLTypePackage.getAnyURI(), "resourceID", null, 0, 1, GetResourceByIdType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4158,7 +4179,7 @@ public class Ows20PackageImpl extends EPackageImpl implements Ows20Package {
         initEReference(getResponsiblePartyType_Role(), this.getCodeType(), null, "role", null, 1, 1, ResponsiblePartyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(sectionsTypeEClass, SectionsType.class, "SectionsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getSectionsType_Section(), theXMLTypePackage.getString(), "section", null, 0, 1, SectionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getSectionsType_Section(), ecorePackage.getEString(), "section", null, 0, -1, SectionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(serviceIdentificationTypeEClass, ServiceIdentificationType.class, "ServiceIdentificationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getServiceIdentificationType_ServiceType(), this.getCodeType(), null, "serviceType", null, 1, 1, ServiceIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

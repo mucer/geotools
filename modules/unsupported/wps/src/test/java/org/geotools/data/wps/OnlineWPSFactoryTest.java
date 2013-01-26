@@ -55,6 +55,9 @@ import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
+import java.util.logging.Logger;
+import org.junit.Assume;
+import org.junit.Test;
 
 
 /**
@@ -72,6 +75,7 @@ import com.vividsolutions.jts.io.WKTReader;
  */
 public class OnlineWPSFactoryTest extends OnlineTestCase
 {
+    private static final Logger LOGGER = org.geotools.util.logging.Logging.getLogger("org.geotools.data.wps");
 
     private static final boolean DISABLE = "true".equalsIgnoreCase(System.getProperty("disableTest", "true"));
 
@@ -90,6 +94,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
         return "wps";
     }
 
+    @Override
     protected Properties createExampleFixture()
     {
         Properties example = new Properties();
@@ -99,6 +104,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
         return example;
     }
 
+    @Override
     public void connect() throws ServiceException, IOException
     {
         if (fixture == null)
@@ -154,6 +160,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
      * @throws IOException
      * @throws ServiceException
      */
+    @Test
     public void testExecuteProcessBufferLocal() throws ParseException, ServiceException, IOException, ProcessException
     {
         if (fixture == null)
@@ -282,6 +289,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
      * @throws IOException
      * @throws ParseException
      */
+    @Test
     public void testExecuteLocalUnion() throws ServiceException, IOException, ParseException, ProcessException
     {
         if (fixture == null)
@@ -372,6 +380,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
      * @throws IOException
      * @throws ParseException
      */
+    @Test
     public void testBADExecuteLocalUnion() throws ServiceException, IOException, ParseException, ProcessException
     {
         if (fixture == null)
@@ -443,6 +452,7 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
      * @throws IOException
      * @throws ParseException
      */
+    @Test
     public void testExecuteLocalAdd() throws ServiceException, IOException, ParseException, ProcessException
     {
         if (fixture == null)
@@ -516,6 +526,106 @@ public class OnlineWPSFactoryTest extends OnlineTestCase
         // System.out.println(result);
         assertEquals(result, expected);
 
+    }
+
+    /**
+     * GEOT-4364: parsing LiteralOutput with null DataType
+     */
+    @Test
+    public void testDescribeProcessNullDatatype() throws ServiceException, IOException, ParseException, ProcessException
+    {
+//        Assume.assumeTrue(fixture != null);
+//        Assume.assumeTrue(! DISABLE );
+
+        if (fixture == null)
+        {
+            return;
+        }
+
+        if (DISABLE)
+        {
+            return;
+        }
+
+        String requestedProcess = "JTS:geometryType";
+
+        WPSCapabilitiesType capabilities = wps.getCapabilities();
+        
+        ProcessOfferingsType processOfferings = capabilities.getProcessOfferings();
+        List<ProcessBriefType> processes = (List<ProcessBriefType>)processOfferings.getProcess();
+
+        // does the server contain the specific process I want
+        boolean found = false;
+        for (ProcessBriefType process : processes) {
+
+            if (process.getIdentifier().getValue().equalsIgnoreCase(requestedProcess))
+            {
+                found = true;
+                break;
+            }
+        }
+
+        Assume.assumeTrue(found);
+
+        // do a full describeprocess on my process
+        DescribeProcessRequest descRequest = wps.createDescribeProcessRequest();
+        descRequest.setIdentifier(requestedProcess);
+
+        DescribeProcessResponse descResponse = wps.issueRequest(descRequest);
+        ProcessDescriptionsType processDesc = descResponse.getProcessDesc();
+        ProcessDescriptionType pdt = (ProcessDescriptionType) processDesc.getProcessDescription().get(0);
+        WPSFactory wpsfactory = new WPSFactory(pdt, this.url);
+    }
+
+    /**
+     * GEOT-4364 [2]: parsing LiteralOutput/DataType with null ows:reference
+     */
+    @Test
+    public void testDescribeProcessDatatypeWithoutRef() throws ServiceException, IOException, ParseException, ProcessException
+    {
+//        Assume.assumeTrue(fixture != null);
+//        Assume.assumeTrue(! DISABLE );
+
+        if (fixture == null)
+        {
+            LOGGER.info("Skipping " + getName()+": fixture not found");
+            return;
+        }
+
+        if (DISABLE)
+        {
+            LOGGER.info("Skipping " + getName()+": test disabled");
+            return;
+        }
+
+        String requestedProcess = "JTS:area";
+
+        WPSCapabilitiesType capabilities = wps.getCapabilities();
+
+        ProcessOfferingsType processOfferings = capabilities.getProcessOfferings();
+        List<ProcessBriefType> processes = (List<ProcessBriefType>)processOfferings.getProcess();
+
+        // does the server contain the specific process I want
+        boolean found = false;
+        for (ProcessBriefType process : processes) {
+
+            if (process.getIdentifier().getValue().equalsIgnoreCase(requestedProcess))
+            {
+                found = true;
+                break;
+            }
+        }
+
+        Assume.assumeTrue(found);
+
+        // do a full describeprocess on my process
+        DescribeProcessRequest descRequest = wps.createDescribeProcessRequest();
+        descRequest.setIdentifier(requestedProcess);
+
+        DescribeProcessResponse descResponse = wps.issueRequest(descRequest);
+        ProcessDescriptionsType processDesc = descResponse.getProcessDesc();
+        ProcessDescriptionType pdt = (ProcessDescriptionType) processDesc.getProcessDescription().get(0);
+        WPSFactory wpsfactory = new WPSFactory(pdt, this.url);
     }
 
 }

@@ -1257,13 +1257,22 @@ public interface Wcs20Package extends EPackage {
     int REQUEST_BASE_TYPE__VERSION = 2;
 
     /**
+     * The feature id for the '<em><b>Base Url</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REQUEST_BASE_TYPE__BASE_URL = 3;
+
+    /**
      * The number of structural features of the '<em>Request Base Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int REQUEST_BASE_TYPE_FEATURE_COUNT = 3;
+    int REQUEST_BASE_TYPE_FEATURE_COUNT = 4;
 
     /**
      * The meta object id for the '{@link net.opengis.wcs20.impl.DescribeCoverageTypeImpl <em>Describe Coverage Type</em>}' class.
@@ -1303,7 +1312,16 @@ public interface Wcs20Package extends EPackage {
     int DESCRIBE_COVERAGE_TYPE__VERSION = REQUEST_BASE_TYPE__VERSION;
 
     /**
-     * The feature id for the '<em><b>Coverage Id</b></em>' attribute.
+     * The feature id for the '<em><b>Base Url</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DESCRIBE_COVERAGE_TYPE__BASE_URL = REQUEST_BASE_TYPE__BASE_URL;
+
+    /**
+     * The feature id for the '<em><b>Coverage Id</b></em>' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1340,13 +1358,22 @@ public interface Wcs20Package extends EPackage {
     int DIMENSION_SUBSET_TYPE__DIMENSION = 0;
 
     /**
+     * The feature id for the '<em><b>CRS</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIMENSION_SUBSET_TYPE__CRS = 1;
+
+    /**
      * The number of structural features of the '<em>Dimension Subset Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DIMENSION_SUBSET_TYPE_FEATURE_COUNT = 1;
+    int DIMENSION_SUBSET_TYPE_FEATURE_COUNT = 2;
 
     /**
      * The meta object id for the '{@link net.opengis.wcs20.impl.DimensionSliceTypeImpl <em>Dimension Slice Type</em>}' class.
@@ -1366,6 +1393,15 @@ public interface Wcs20Package extends EPackage {
      * @ordered
      */
     int DIMENSION_SLICE_TYPE__DIMENSION = DIMENSION_SUBSET_TYPE__DIMENSION;
+
+    /**
+     * The feature id for the '<em><b>CRS</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIMENSION_SLICE_TYPE__CRS = DIMENSION_SUBSET_TYPE__CRS;
 
     /**
      * The feature id for the '<em><b>Slice Point</b></em>' attribute.
@@ -1403,6 +1439,15 @@ public interface Wcs20Package extends EPackage {
      * @ordered
      */
     int DIMENSION_TRIM_TYPE__DIMENSION = DIMENSION_SUBSET_TYPE__DIMENSION;
+
+    /**
+     * The feature id for the '<em><b>CRS</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIMENSION_TRIM_TYPE__CRS = DIMENSION_SUBSET_TYPE__CRS;
 
     /**
      * The feature id for the '<em><b>Trim Low</b></em>' attribute.
@@ -1650,13 +1695,13 @@ public interface Wcs20Package extends EPackage {
     int EXTENSION_TYPE = 12;
 
     /**
-     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * The feature id for the '<em><b>Contents</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXTENSION_TYPE__ANY = 0;
+    int EXTENSION_TYPE__CONTENTS = 0;
 
     /**
      * The number of structural features of the '<em>Extension Type</em>' class.
@@ -1723,6 +1768,15 @@ public interface Wcs20Package extends EPackage {
     int GET_CAPABILITIES_TYPE__UPDATE_SEQUENCE = Ows20Package.GET_CAPABILITIES_TYPE__UPDATE_SEQUENCE;
 
     /**
+     * The feature id for the '<em><b>Base Url</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CAPABILITIES_TYPE__BASE_URL = Ows20Package.GET_CAPABILITIES_TYPE__BASE_URL;
+
+    /**
      * The feature id for the '<em><b>Service</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1776,6 +1830,15 @@ public interface Wcs20Package extends EPackage {
      * @ordered
      */
     int GET_COVERAGE_TYPE__VERSION = REQUEST_BASE_TYPE__VERSION;
+
+    /**
+     * The feature id for the '<em><b>Base Url</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_COVERAGE_TYPE__BASE_URL = REQUEST_BASE_TYPE__BASE_URL;
 
     /**
      * The feature id for the '<em><b>Coverage Id</b></em>' attribute.
@@ -1980,6 +2043,580 @@ public interface Wcs20Package extends EPackage {
     int OBJECT_FEATURE_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ExtensionItemTypeImpl <em>Extension Item Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ExtensionItemTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getExtensionItemType()
+     * @generated
+     */
+    int EXTENSION_ITEM_TYPE = 20;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXTENSION_ITEM_TYPE__NAME = 0;
+
+    /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXTENSION_ITEM_TYPE__NAMESPACE = 1;
+
+    /**
+     * The feature id for the '<em><b>Simple Content</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXTENSION_ITEM_TYPE__SIMPLE_CONTENT = 2;
+
+    /**
+     * The feature id for the '<em><b>Object Content</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXTENSION_ITEM_TYPE__OBJECT_CONTENT = 3;
+
+    /**
+     * The number of structural features of the '<em>Extension Item Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXTENSION_ITEM_TYPE_FEATURE_COUNT = 4;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.RangeIntervalTypeImpl <em>Range Interval Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.RangeIntervalTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeIntervalType()
+     * @generated
+     */
+    int RANGE_INTERVAL_TYPE = 21;
+
+    /**
+     * The feature id for the '<em><b>Start Component</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_INTERVAL_TYPE__START_COMPONENT = 0;
+
+    /**
+     * The feature id for the '<em><b>End Component</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_INTERVAL_TYPE__END_COMPONENT = 1;
+
+    /**
+     * The number of structural features of the '<em>Range Interval Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_INTERVAL_TYPE_FEATURE_COUNT = 2;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.RangeItemTypeImpl <em>Range Item Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.RangeItemTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeItemType()
+     * @generated
+     */
+    int RANGE_ITEM_TYPE = 22;
+
+    /**
+     * The feature id for the '<em><b>Range Component</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_ITEM_TYPE__RANGE_COMPONENT = 0;
+
+    /**
+     * The feature id for the '<em><b>Range Interval</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_ITEM_TYPE__RANGE_INTERVAL = 1;
+
+    /**
+     * The number of structural features of the '<em>Range Item Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_ITEM_TYPE_FEATURE_COUNT = 2;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.RangeSubsetTypeImpl <em>Range Subset Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.RangeSubsetTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeSubsetType()
+     * @generated
+     */
+    int RANGE_SUBSET_TYPE = 23;
+
+    /**
+     * The feature id for the '<em><b>Range Items</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_SUBSET_TYPE__RANGE_ITEMS = 0;
+
+    /**
+     * The number of structural features of the '<em>Range Subset Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RANGE_SUBSET_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScaleAxisByFactorTypeImpl <em>Scale Axis By Factor Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScaleAxisByFactorTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleAxisByFactorType()
+     * @generated
+     */
+    int SCALE_AXIS_BY_FACTOR_TYPE = 24;
+
+    /**
+     * The feature id for the '<em><b>Scale Axis</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_AXIS_BY_FACTOR_TYPE__SCALE_AXIS = 0;
+
+    /**
+     * The number of structural features of the '<em>Scale Axis By Factor Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_AXIS_BY_FACTOR_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScaleAxisTypeImpl <em>Scale Axis Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScaleAxisTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleAxisType()
+     * @generated
+     */
+    int SCALE_AXIS_TYPE = 25;
+
+    /**
+     * The feature id for the '<em><b>Axis</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_AXIS_TYPE__AXIS = 0;
+
+    /**
+     * The feature id for the '<em><b>Scale Factor</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_AXIS_TYPE__SCALE_FACTOR = 1;
+
+    /**
+     * The number of structural features of the '<em>Scale Axis Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_AXIS_TYPE_FEATURE_COUNT = 2;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScaleByFactorTypeImpl <em>Scale By Factor Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScaleByFactorTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleByFactorType()
+     * @generated
+     */
+    int SCALE_BY_FACTOR_TYPE = 26;
+
+    /**
+     * The feature id for the '<em><b>Scale Factor</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_BY_FACTOR_TYPE__SCALE_FACTOR = 0;
+
+    /**
+     * The number of structural features of the '<em>Scale By Factor Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_BY_FACTOR_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScaleToExtentTypeImpl <em>Scale To Extent Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScaleToExtentTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleToExtentType()
+     * @generated
+     */
+    int SCALE_TO_EXTENT_TYPE = 27;
+
+    /**
+     * The feature id for the '<em><b>Target Axis Extent</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_TO_EXTENT_TYPE__TARGET_AXIS_EXTENT = 0;
+
+    /**
+     * The number of structural features of the '<em>Scale To Extent Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_TO_EXTENT_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScaleToSizeTypeImpl <em>Scale To Size Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScaleToSizeTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleToSizeType()
+     * @generated
+     */
+    int SCALE_TO_SIZE_TYPE = 28;
+
+    /**
+     * The feature id for the '<em><b>Target Axis Size</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_TO_SIZE_TYPE__TARGET_AXIS_SIZE = 0;
+
+    /**
+     * The number of structural features of the '<em>Scale To Size Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALE_TO_SIZE_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.ScalingTypeImpl <em>Scaling Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.ScalingTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScalingType()
+     * @generated
+     */
+    int SCALING_TYPE = 29;
+
+    /**
+     * The feature id for the '<em><b>Scale By Factor</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALING_TYPE__SCALE_BY_FACTOR = 0;
+
+    /**
+     * The feature id for the '<em><b>Scale Axes By Factor</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALING_TYPE__SCALE_AXES_BY_FACTOR = 1;
+
+    /**
+     * The feature id for the '<em><b>Scale To Size</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALING_TYPE__SCALE_TO_SIZE = 2;
+
+    /**
+     * The feature id for the '<em><b>Scale To Extent</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALING_TYPE__SCALE_TO_EXTENT = 3;
+
+    /**
+     * The number of structural features of the '<em>Scaling Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCALING_TYPE_FEATURE_COUNT = 4;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.TargetAxisExtentTypeImpl <em>Target Axis Extent Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.TargetAxisExtentTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getTargetAxisExtentType()
+     * @generated
+     */
+    int TARGET_AXIS_EXTENT_TYPE = 30;
+
+    /**
+     * The feature id for the '<em><b>Axis</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_EXTENT_TYPE__AXIS = 0;
+
+    /**
+     * The feature id for the '<em><b>Low</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_EXTENT_TYPE__LOW = 1;
+
+    /**
+     * The feature id for the '<em><b>High</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_EXTENT_TYPE__HIGH = 2;
+
+    /**
+     * The number of structural features of the '<em>Target Axis Extent Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_EXTENT_TYPE_FEATURE_COUNT = 3;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.TargetAxisSizeTypeImpl <em>Target Axis Size Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.TargetAxisSizeTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getTargetAxisSizeType()
+     * @generated
+     */
+    int TARGET_AXIS_SIZE_TYPE = 31;
+
+    /**
+     * The feature id for the '<em><b>Axis</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_SIZE_TYPE__AXIS = 0;
+
+    /**
+     * The feature id for the '<em><b>Target Size</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_SIZE_TYPE__TARGET_SIZE = 1;
+
+    /**
+     * The number of structural features of the '<em>Target Axis Size Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TARGET_AXIS_SIZE_TYPE_FEATURE_COUNT = 2;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.InterpolationAxesTypeImpl <em>Interpolation Axes Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.InterpolationAxesTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationAxesType()
+     * @generated
+     */
+    int INTERPOLATION_AXES_TYPE = 32;
+
+    /**
+     * The feature id for the '<em><b>Interpolation Axis</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_AXES_TYPE__INTERPOLATION_AXIS = 0;
+
+    /**
+     * The number of structural features of the '<em>Interpolation Axes Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_AXES_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.InterpolationAxisTypeImpl <em>Interpolation Axis Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.InterpolationAxisTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationAxisType()
+     * @generated
+     */
+    int INTERPOLATION_AXIS_TYPE = 33;
+
+    /**
+     * The feature id for the '<em><b>Axis</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_AXIS_TYPE__AXIS = 0;
+
+    /**
+     * The feature id for the '<em><b>Interpolation Method</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_AXIS_TYPE__INTERPOLATION_METHOD = 1;
+
+    /**
+     * The number of structural features of the '<em>Interpolation Axis Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_AXIS_TYPE_FEATURE_COUNT = 2;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.InterpolationMethodTypeImpl <em>Interpolation Method Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.InterpolationMethodTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationMethodType()
+     * @generated
+     */
+    int INTERPOLATION_METHOD_TYPE = 34;
+
+    /**
+     * The feature id for the '<em><b>Interpolation Method</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_METHOD_TYPE__INTERPOLATION_METHOD = 0;
+
+    /**
+     * The number of structural features of the '<em>Interpolation Method Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_METHOD_TYPE_FEATURE_COUNT = 1;
+
+    /**
+     * The meta object id for the '{@link net.opengis.wcs20.impl.InterpolationTypeImpl <em>Interpolation Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.opengis.wcs20.impl.InterpolationTypeImpl
+     * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationType()
+     * @generated
+     */
+    int INTERPOLATION_TYPE = 35;
+
+    /**
+     * The feature id for the '<em><b>Interpolation Method</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_TYPE__INTERPOLATION_METHOD = 0;
+
+    /**
+     * The feature id for the '<em><b>Interpolation Axes</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_TYPE__INTERPOLATION_AXES = 1;
+
+    /**
+     * The number of structural features of the '<em>Interpolation Type</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INTERPOLATION_TYPE_FEATURE_COUNT = 2;
+
+    /**
      * The meta object id for the '<em>Version String Type</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1987,7 +2624,7 @@ public interface Wcs20Package extends EPackage {
      * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getVersionStringType()
      * @generated
      */
-    int VERSION_STRING_TYPE = 20;
+    int VERSION_STRING_TYPE = 36;
 
 
     /**
@@ -1998,7 +2635,7 @@ public interface Wcs20Package extends EPackage {
      * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getVersionStringType_1()
      * @generated
      */
-    int VERSION_STRING_TYPE_1 = 21;
+    int VERSION_STRING_TYPE_1 = 37;
 
 
     /**
@@ -2009,7 +2646,7 @@ public interface Wcs20Package extends EPackage {
      * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getQName()
      * @generated
      */
-    int QNAME = 22;
+    int QNAME = 38;
 
 
     /**
@@ -2346,10 +2983,10 @@ public interface Wcs20Package extends EPackage {
     EClass getDescribeCoverageType();
 
     /**
-     * Returns the meta object for the attribute '{@link net.opengis.wcs20.DescribeCoverageType#getCoverageId <em>Coverage Id</em>}'.
+     * Returns the meta object for the attribute list '{@link net.opengis.wcs20.DescribeCoverageType#getCoverageId <em>Coverage Id</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Coverage Id</em>'.
+     * @return the meta object for the attribute list '<em>Coverage Id</em>'.
      * @see net.opengis.wcs20.DescribeCoverageType#getCoverageId()
      * @see #getDescribeCoverageType()
      * @generated
@@ -2397,6 +3034,17 @@ public interface Wcs20Package extends EPackage {
      * @generated
      */
     EAttribute getDimensionSubsetType_Dimension();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.DimensionSubsetType#getCRS <em>CRS</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>CRS</em>'.
+     * @see net.opengis.wcs20.DimensionSubsetType#getCRS()
+     * @see #getDimensionSubsetType()
+     * @generated
+     */
+    EAttribute getDimensionSubsetType_CRS();
 
     /**
      * Returns the meta object for class '{@link net.opengis.wcs20.DimensionTrimType <em>Dimension Trim Type</em>}'.
@@ -2682,15 +3330,15 @@ public interface Wcs20Package extends EPackage {
     EClass getExtensionType();
 
     /**
-     * Returns the meta object for the attribute list '{@link net.opengis.wcs20.ExtensionType#getAny <em>Any</em>}'.
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.ExtensionType#getContents <em>Contents</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Any</em>'.
-     * @see net.opengis.wcs20.ExtensionType#getAny()
+     * @return the meta object for the reference list '<em>Contents</em>'.
+     * @see net.opengis.wcs20.ExtensionType#getContents()
      * @see #getExtensionType()
      * @generated
      */
-    EAttribute getExtensionType_Any();
+    EReference getExtensionType_Contents();
 
     /**
      * Returns the meta object for class '{@link net.opengis.wcs20.GetCapabilitiesType <em>Get Capabilities Type</em>}'.
@@ -2854,6 +3502,17 @@ public interface Wcs20Package extends EPackage {
     EAttribute getRequestBaseType_Version();
 
     /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.RequestBaseType#getBaseUrl <em>Base Url</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Base Url</em>'.
+     * @see net.opengis.wcs20.RequestBaseType#getBaseUrl()
+     * @see #getRequestBaseType()
+     * @generated
+     */
+    EAttribute getRequestBaseType_BaseUrl();
+
+    /**
      * Returns the meta object for class '{@link net.opengis.wcs20.ServiceMetadataType <em>Service Metadata Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2949,6 +3608,496 @@ public interface Wcs20Package extends EPackage {
      * @generated
      */
     EClass getObject();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ExtensionItemType <em>Extension Item Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Extension Item Type</em>'.
+     * @see net.opengis.wcs20.ExtensionItemType
+     * @generated
+     */
+    EClass getExtensionItemType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ExtensionItemType#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see net.opengis.wcs20.ExtensionItemType#getName()
+     * @see #getExtensionItemType()
+     * @generated
+     */
+    EAttribute getExtensionItemType_Name();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ExtensionItemType#getNamespace <em>Namespace</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Namespace</em>'.
+     * @see net.opengis.wcs20.ExtensionItemType#getNamespace()
+     * @see #getExtensionItemType()
+     * @generated
+     */
+    EAttribute getExtensionItemType_Namespace();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ExtensionItemType#getSimpleContent <em>Simple Content</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Simple Content</em>'.
+     * @see net.opengis.wcs20.ExtensionItemType#getSimpleContent()
+     * @see #getExtensionItemType()
+     * @generated
+     */
+    EAttribute getExtensionItemType_SimpleContent();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.ExtensionItemType#getObjectContent <em>Object Content</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Object Content</em>'.
+     * @see net.opengis.wcs20.ExtensionItemType#getObjectContent()
+     * @see #getExtensionItemType()
+     * @generated
+     */
+    EReference getExtensionItemType_ObjectContent();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.RangeIntervalType <em>Range Interval Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Range Interval Type</em>'.
+     * @see net.opengis.wcs20.RangeIntervalType
+     * @generated
+     */
+    EClass getRangeIntervalType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.RangeIntervalType#getStartComponent <em>Start Component</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Start Component</em>'.
+     * @see net.opengis.wcs20.RangeIntervalType#getStartComponent()
+     * @see #getRangeIntervalType()
+     * @generated
+     */
+    EAttribute getRangeIntervalType_StartComponent();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.RangeIntervalType#getEndComponent <em>End Component</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>End Component</em>'.
+     * @see net.opengis.wcs20.RangeIntervalType#getEndComponent()
+     * @see #getRangeIntervalType()
+     * @generated
+     */
+    EAttribute getRangeIntervalType_EndComponent();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.RangeItemType <em>Range Item Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Range Item Type</em>'.
+     * @see net.opengis.wcs20.RangeItemType
+     * @generated
+     */
+    EClass getRangeItemType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.RangeItemType#getRangeComponent <em>Range Component</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Range Component</em>'.
+     * @see net.opengis.wcs20.RangeItemType#getRangeComponent()
+     * @see #getRangeItemType()
+     * @generated
+     */
+    EAttribute getRangeItemType_RangeComponent();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.RangeItemType#getRangeInterval <em>Range Interval</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Range Interval</em>'.
+     * @see net.opengis.wcs20.RangeItemType#getRangeInterval()
+     * @see #getRangeItemType()
+     * @generated
+     */
+    EReference getRangeItemType_RangeInterval();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.RangeSubsetType <em>Range Subset Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Range Subset Type</em>'.
+     * @see net.opengis.wcs20.RangeSubsetType
+     * @generated
+     */
+    EClass getRangeSubsetType();
+
+    /**
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.RangeSubsetType#getRangeItems <em>Range Items</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Range Items</em>'.
+     * @see net.opengis.wcs20.RangeSubsetType#getRangeItems()
+     * @see #getRangeSubsetType()
+     * @generated
+     */
+    EReference getRangeSubsetType_RangeItems();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScaleAxisByFactorType <em>Scale Axis By Factor Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scale Axis By Factor Type</em>'.
+     * @see net.opengis.wcs20.ScaleAxisByFactorType
+     * @generated
+     */
+    EClass getScaleAxisByFactorType();
+
+    /**
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.ScaleAxisByFactorType#getScaleAxis <em>Scale Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Scale Axis</em>'.
+     * @see net.opengis.wcs20.ScaleAxisByFactorType#getScaleAxis()
+     * @see #getScaleAxisByFactorType()
+     * @generated
+     */
+    EReference getScaleAxisByFactorType_ScaleAxis();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScaleAxisType <em>Scale Axis Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scale Axis Type</em>'.
+     * @see net.opengis.wcs20.ScaleAxisType
+     * @generated
+     */
+    EClass getScaleAxisType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ScaleAxisType#getAxis <em>Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Axis</em>'.
+     * @see net.opengis.wcs20.ScaleAxisType#getAxis()
+     * @see #getScaleAxisType()
+     * @generated
+     */
+    EAttribute getScaleAxisType_Axis();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ScaleAxisType#getScaleFactor <em>Scale Factor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Scale Factor</em>'.
+     * @see net.opengis.wcs20.ScaleAxisType#getScaleFactor()
+     * @see #getScaleAxisType()
+     * @generated
+     */
+    EAttribute getScaleAxisType_ScaleFactor();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScaleByFactorType <em>Scale By Factor Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scale By Factor Type</em>'.
+     * @see net.opengis.wcs20.ScaleByFactorType
+     * @generated
+     */
+    EClass getScaleByFactorType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.ScaleByFactorType#getScaleFactor <em>Scale Factor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Scale Factor</em>'.
+     * @see net.opengis.wcs20.ScaleByFactorType#getScaleFactor()
+     * @see #getScaleByFactorType()
+     * @generated
+     */
+    EAttribute getScaleByFactorType_ScaleFactor();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScaleToExtentType <em>Scale To Extent Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scale To Extent Type</em>'.
+     * @see net.opengis.wcs20.ScaleToExtentType
+     * @generated
+     */
+    EClass getScaleToExtentType();
+
+    /**
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.ScaleToExtentType#getTargetAxisExtent <em>Target Axis Extent</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Target Axis Extent</em>'.
+     * @see net.opengis.wcs20.ScaleToExtentType#getTargetAxisExtent()
+     * @see #getScaleToExtentType()
+     * @generated
+     */
+    EReference getScaleToExtentType_TargetAxisExtent();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScaleToSizeType <em>Scale To Size Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scale To Size Type</em>'.
+     * @see net.opengis.wcs20.ScaleToSizeType
+     * @generated
+     */
+    EClass getScaleToSizeType();
+
+    /**
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.ScaleToSizeType#getTargetAxisSize <em>Target Axis Size</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Target Axis Size</em>'.
+     * @see net.opengis.wcs20.ScaleToSizeType#getTargetAxisSize()
+     * @see #getScaleToSizeType()
+     * @generated
+     */
+    EReference getScaleToSizeType_TargetAxisSize();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.ScalingType <em>Scaling Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Scaling Type</em>'.
+     * @see net.opengis.wcs20.ScalingType
+     * @generated
+     */
+    EClass getScalingType();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.ScalingType#getScaleByFactor <em>Scale By Factor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Scale By Factor</em>'.
+     * @see net.opengis.wcs20.ScalingType#getScaleByFactor()
+     * @see #getScalingType()
+     * @generated
+     */
+    EReference getScalingType_ScaleByFactor();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.ScalingType#getScaleAxesByFactor <em>Scale Axes By Factor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Scale Axes By Factor</em>'.
+     * @see net.opengis.wcs20.ScalingType#getScaleAxesByFactor()
+     * @see #getScalingType()
+     * @generated
+     */
+    EReference getScalingType_ScaleAxesByFactor();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.ScalingType#getScaleToSize <em>Scale To Size</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Scale To Size</em>'.
+     * @see net.opengis.wcs20.ScalingType#getScaleToSize()
+     * @see #getScalingType()
+     * @generated
+     */
+    EReference getScalingType_ScaleToSize();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.ScalingType#getScaleToExtent <em>Scale To Extent</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Scale To Extent</em>'.
+     * @see net.opengis.wcs20.ScalingType#getScaleToExtent()
+     * @see #getScalingType()
+     * @generated
+     */
+    EReference getScalingType_ScaleToExtent();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.TargetAxisExtentType <em>Target Axis Extent Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Target Axis Extent Type</em>'.
+     * @see net.opengis.wcs20.TargetAxisExtentType
+     * @generated
+     */
+    EClass getTargetAxisExtentType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.TargetAxisExtentType#getAxis <em>Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Axis</em>'.
+     * @see net.opengis.wcs20.TargetAxisExtentType#getAxis()
+     * @see #getTargetAxisExtentType()
+     * @generated
+     */
+    EAttribute getTargetAxisExtentType_Axis();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.TargetAxisExtentType#getLow <em>Low</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Low</em>'.
+     * @see net.opengis.wcs20.TargetAxisExtentType#getLow()
+     * @see #getTargetAxisExtentType()
+     * @generated
+     */
+    EAttribute getTargetAxisExtentType_Low();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.TargetAxisExtentType#getHigh <em>High</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>High</em>'.
+     * @see net.opengis.wcs20.TargetAxisExtentType#getHigh()
+     * @see #getTargetAxisExtentType()
+     * @generated
+     */
+    EAttribute getTargetAxisExtentType_High();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.TargetAxisSizeType <em>Target Axis Size Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Target Axis Size Type</em>'.
+     * @see net.opengis.wcs20.TargetAxisSizeType
+     * @generated
+     */
+    EClass getTargetAxisSizeType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.TargetAxisSizeType#getAxis <em>Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Axis</em>'.
+     * @see net.opengis.wcs20.TargetAxisSizeType#getAxis()
+     * @see #getTargetAxisSizeType()
+     * @generated
+     */
+    EAttribute getTargetAxisSizeType_Axis();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.TargetAxisSizeType#getTargetSize <em>Target Size</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Target Size</em>'.
+     * @see net.opengis.wcs20.TargetAxisSizeType#getTargetSize()
+     * @see #getTargetAxisSizeType()
+     * @generated
+     */
+    EAttribute getTargetAxisSizeType_TargetSize();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.InterpolationAxesType <em>Interpolation Axes Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Interpolation Axes Type</em>'.
+     * @see net.opengis.wcs20.InterpolationAxesType
+     * @generated
+     */
+    EClass getInterpolationAxesType();
+
+    /**
+     * Returns the meta object for the reference list '{@link net.opengis.wcs20.InterpolationAxesType#getInterpolationAxis <em>Interpolation Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Interpolation Axis</em>'.
+     * @see net.opengis.wcs20.InterpolationAxesType#getInterpolationAxis()
+     * @see #getInterpolationAxesType()
+     * @generated
+     */
+    EReference getInterpolationAxesType_InterpolationAxis();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.InterpolationAxisType <em>Interpolation Axis Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Interpolation Axis Type</em>'.
+     * @see net.opengis.wcs20.InterpolationAxisType
+     * @generated
+     */
+    EClass getInterpolationAxisType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.InterpolationAxisType#getAxis <em>Axis</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Axis</em>'.
+     * @see net.opengis.wcs20.InterpolationAxisType#getAxis()
+     * @see #getInterpolationAxisType()
+     * @generated
+     */
+    EAttribute getInterpolationAxisType_Axis();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.InterpolationAxisType#getInterpolationMethod <em>Interpolation Method</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Interpolation Method</em>'.
+     * @see net.opengis.wcs20.InterpolationAxisType#getInterpolationMethod()
+     * @see #getInterpolationAxisType()
+     * @generated
+     */
+    EAttribute getInterpolationAxisType_InterpolationMethod();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.InterpolationMethodType <em>Interpolation Method Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Interpolation Method Type</em>'.
+     * @see net.opengis.wcs20.InterpolationMethodType
+     * @generated
+     */
+    EClass getInterpolationMethodType();
+
+    /**
+     * Returns the meta object for the attribute '{@link net.opengis.wcs20.InterpolationMethodType#getInterpolationMethod <em>Interpolation Method</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Interpolation Method</em>'.
+     * @see net.opengis.wcs20.InterpolationMethodType#getInterpolationMethod()
+     * @see #getInterpolationMethodType()
+     * @generated
+     */
+    EAttribute getInterpolationMethodType_InterpolationMethod();
+
+    /**
+     * Returns the meta object for class '{@link net.opengis.wcs20.InterpolationType <em>Interpolation Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Interpolation Type</em>'.
+     * @see net.opengis.wcs20.InterpolationType
+     * @generated
+     */
+    EClass getInterpolationType();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.InterpolationType#getInterpolationMethod <em>Interpolation Method</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Interpolation Method</em>'.
+     * @see net.opengis.wcs20.InterpolationType#getInterpolationMethod()
+     * @see #getInterpolationType()
+     * @generated
+     */
+    EReference getInterpolationType_InterpolationMethod();
+
+    /**
+     * Returns the meta object for the reference '{@link net.opengis.wcs20.InterpolationType#getInterpolationAxes <em>Interpolation Axes</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Interpolation Axes</em>'.
+     * @see net.opengis.wcs20.InterpolationType#getInterpolationAxes()
+     * @see #getInterpolationType()
+     * @generated
+     */
+    EReference getInterpolationType_InterpolationAxes();
 
     /**
      * Returns the meta object for data type '{@link java.lang.String <em>Version String Type</em>}'.
@@ -3271,7 +4420,7 @@ public interface Wcs20Package extends EPackage {
         EClass DESCRIBE_COVERAGE_TYPE = eINSTANCE.getDescribeCoverageType();
 
         /**
-         * The meta object literal for the '<em><b>Coverage Id</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Coverage Id</b></em>' attribute list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
@@ -3313,6 +4462,14 @@ public interface Wcs20Package extends EPackage {
          * @generated
          */
         EAttribute DIMENSION_SUBSET_TYPE__DIMENSION = eINSTANCE.getDimensionSubsetType_Dimension();
+
+        /**
+         * The meta object literal for the '<em><b>CRS</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute DIMENSION_SUBSET_TYPE__CRS = eINSTANCE.getDimensionSubsetType_CRS();
 
         /**
          * The meta object literal for the '{@link net.opengis.wcs20.impl.DimensionTrimTypeImpl <em>Dimension Trim Type</em>}' class.
@@ -3529,12 +4686,12 @@ public interface Wcs20Package extends EPackage {
         EClass EXTENSION_TYPE = eINSTANCE.getExtensionType();
 
         /**
-         * The meta object literal for the '<em><b>Any</b></em>' attribute list feature.
+         * The meta object literal for the '<em><b>Contents</b></em>' reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute EXTENSION_TYPE__ANY = eINSTANCE.getExtensionType_Any();
+        EReference EXTENSION_TYPE__CONTENTS = eINSTANCE.getExtensionType_Contents();
 
         /**
          * The meta object literal for the '{@link net.opengis.wcs20.impl.GetCapabilitiesTypeImpl <em>Get Capabilities Type</em>}' class.
@@ -3665,6 +4822,14 @@ public interface Wcs20Package extends EPackage {
         EAttribute REQUEST_BASE_TYPE__VERSION = eINSTANCE.getRequestBaseType_Version();
 
         /**
+         * The meta object literal for the '<em><b>Base Url</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute REQUEST_BASE_TYPE__BASE_URL = eINSTANCE.getRequestBaseType_BaseUrl();
+
+        /**
          * The meta object literal for the '{@link net.opengis.wcs20.impl.ServiceMetadataTypeImpl <em>Service Metadata Type</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -3741,6 +4906,406 @@ public interface Wcs20Package extends EPackage {
          * @generated
          */
         EClass OBJECT = eINSTANCE.getObject();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ExtensionItemTypeImpl <em>Extension Item Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ExtensionItemTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getExtensionItemType()
+         * @generated
+         */
+        EClass EXTENSION_ITEM_TYPE = eINSTANCE.getExtensionItemType();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EXTENSION_ITEM_TYPE__NAME = eINSTANCE.getExtensionItemType_Name();
+
+        /**
+         * The meta object literal for the '<em><b>Namespace</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EXTENSION_ITEM_TYPE__NAMESPACE = eINSTANCE.getExtensionItemType_Namespace();
+
+        /**
+         * The meta object literal for the '<em><b>Simple Content</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute EXTENSION_ITEM_TYPE__SIMPLE_CONTENT = eINSTANCE.getExtensionItemType_SimpleContent();
+
+        /**
+         * The meta object literal for the '<em><b>Object Content</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference EXTENSION_ITEM_TYPE__OBJECT_CONTENT = eINSTANCE.getExtensionItemType_ObjectContent();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.RangeIntervalTypeImpl <em>Range Interval Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.RangeIntervalTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeIntervalType()
+         * @generated
+         */
+        EClass RANGE_INTERVAL_TYPE = eINSTANCE.getRangeIntervalType();
+
+        /**
+         * The meta object literal for the '<em><b>Start Component</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute RANGE_INTERVAL_TYPE__START_COMPONENT = eINSTANCE.getRangeIntervalType_StartComponent();
+
+        /**
+         * The meta object literal for the '<em><b>End Component</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute RANGE_INTERVAL_TYPE__END_COMPONENT = eINSTANCE.getRangeIntervalType_EndComponent();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.RangeItemTypeImpl <em>Range Item Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.RangeItemTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeItemType()
+         * @generated
+         */
+        EClass RANGE_ITEM_TYPE = eINSTANCE.getRangeItemType();
+
+        /**
+         * The meta object literal for the '<em><b>Range Component</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute RANGE_ITEM_TYPE__RANGE_COMPONENT = eINSTANCE.getRangeItemType_RangeComponent();
+
+        /**
+         * The meta object literal for the '<em><b>Range Interval</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference RANGE_ITEM_TYPE__RANGE_INTERVAL = eINSTANCE.getRangeItemType_RangeInterval();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.RangeSubsetTypeImpl <em>Range Subset Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.RangeSubsetTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getRangeSubsetType()
+         * @generated
+         */
+        EClass RANGE_SUBSET_TYPE = eINSTANCE.getRangeSubsetType();
+
+        /**
+         * The meta object literal for the '<em><b>Range Items</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference RANGE_SUBSET_TYPE__RANGE_ITEMS = eINSTANCE.getRangeSubsetType_RangeItems();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScaleAxisByFactorTypeImpl <em>Scale Axis By Factor Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScaleAxisByFactorTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleAxisByFactorType()
+         * @generated
+         */
+        EClass SCALE_AXIS_BY_FACTOR_TYPE = eINSTANCE.getScaleAxisByFactorType();
+
+        /**
+         * The meta object literal for the '<em><b>Scale Axis</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALE_AXIS_BY_FACTOR_TYPE__SCALE_AXIS = eINSTANCE.getScaleAxisByFactorType_ScaleAxis();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScaleAxisTypeImpl <em>Scale Axis Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScaleAxisTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleAxisType()
+         * @generated
+         */
+        EClass SCALE_AXIS_TYPE = eINSTANCE.getScaleAxisType();
+
+        /**
+         * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute SCALE_AXIS_TYPE__AXIS = eINSTANCE.getScaleAxisType_Axis();
+
+        /**
+         * The meta object literal for the '<em><b>Scale Factor</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute SCALE_AXIS_TYPE__SCALE_FACTOR = eINSTANCE.getScaleAxisType_ScaleFactor();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScaleByFactorTypeImpl <em>Scale By Factor Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScaleByFactorTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleByFactorType()
+         * @generated
+         */
+        EClass SCALE_BY_FACTOR_TYPE = eINSTANCE.getScaleByFactorType();
+
+        /**
+         * The meta object literal for the '<em><b>Scale Factor</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute SCALE_BY_FACTOR_TYPE__SCALE_FACTOR = eINSTANCE.getScaleByFactorType_ScaleFactor();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScaleToExtentTypeImpl <em>Scale To Extent Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScaleToExtentTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleToExtentType()
+         * @generated
+         */
+        EClass SCALE_TO_EXTENT_TYPE = eINSTANCE.getScaleToExtentType();
+
+        /**
+         * The meta object literal for the '<em><b>Target Axis Extent</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALE_TO_EXTENT_TYPE__TARGET_AXIS_EXTENT = eINSTANCE.getScaleToExtentType_TargetAxisExtent();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScaleToSizeTypeImpl <em>Scale To Size Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScaleToSizeTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScaleToSizeType()
+         * @generated
+         */
+        EClass SCALE_TO_SIZE_TYPE = eINSTANCE.getScaleToSizeType();
+
+        /**
+         * The meta object literal for the '<em><b>Target Axis Size</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALE_TO_SIZE_TYPE__TARGET_AXIS_SIZE = eINSTANCE.getScaleToSizeType_TargetAxisSize();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.ScalingTypeImpl <em>Scaling Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.ScalingTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getScalingType()
+         * @generated
+         */
+        EClass SCALING_TYPE = eINSTANCE.getScalingType();
+
+        /**
+         * The meta object literal for the '<em><b>Scale By Factor</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALING_TYPE__SCALE_BY_FACTOR = eINSTANCE.getScalingType_ScaleByFactor();
+
+        /**
+         * The meta object literal for the '<em><b>Scale Axes By Factor</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALING_TYPE__SCALE_AXES_BY_FACTOR = eINSTANCE.getScalingType_ScaleAxesByFactor();
+
+        /**
+         * The meta object literal for the '<em><b>Scale To Size</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALING_TYPE__SCALE_TO_SIZE = eINSTANCE.getScalingType_ScaleToSize();
+
+        /**
+         * The meta object literal for the '<em><b>Scale To Extent</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference SCALING_TYPE__SCALE_TO_EXTENT = eINSTANCE.getScalingType_ScaleToExtent();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.TargetAxisExtentTypeImpl <em>Target Axis Extent Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.TargetAxisExtentTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getTargetAxisExtentType()
+         * @generated
+         */
+        EClass TARGET_AXIS_EXTENT_TYPE = eINSTANCE.getTargetAxisExtentType();
+
+        /**
+         * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute TARGET_AXIS_EXTENT_TYPE__AXIS = eINSTANCE.getTargetAxisExtentType_Axis();
+
+        /**
+         * The meta object literal for the '<em><b>Low</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute TARGET_AXIS_EXTENT_TYPE__LOW = eINSTANCE.getTargetAxisExtentType_Low();
+
+        /**
+         * The meta object literal for the '<em><b>High</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute TARGET_AXIS_EXTENT_TYPE__HIGH = eINSTANCE.getTargetAxisExtentType_High();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.TargetAxisSizeTypeImpl <em>Target Axis Size Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.TargetAxisSizeTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getTargetAxisSizeType()
+         * @generated
+         */
+        EClass TARGET_AXIS_SIZE_TYPE = eINSTANCE.getTargetAxisSizeType();
+
+        /**
+         * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute TARGET_AXIS_SIZE_TYPE__AXIS = eINSTANCE.getTargetAxisSizeType_Axis();
+
+        /**
+         * The meta object literal for the '<em><b>Target Size</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute TARGET_AXIS_SIZE_TYPE__TARGET_SIZE = eINSTANCE.getTargetAxisSizeType_TargetSize();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.InterpolationAxesTypeImpl <em>Interpolation Axes Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.InterpolationAxesTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationAxesType()
+         * @generated
+         */
+        EClass INTERPOLATION_AXES_TYPE = eINSTANCE.getInterpolationAxesType();
+
+        /**
+         * The meta object literal for the '<em><b>Interpolation Axis</b></em>' reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference INTERPOLATION_AXES_TYPE__INTERPOLATION_AXIS = eINSTANCE.getInterpolationAxesType_InterpolationAxis();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.InterpolationAxisTypeImpl <em>Interpolation Axis Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.InterpolationAxisTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationAxisType()
+         * @generated
+         */
+        EClass INTERPOLATION_AXIS_TYPE = eINSTANCE.getInterpolationAxisType();
+
+        /**
+         * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute INTERPOLATION_AXIS_TYPE__AXIS = eINSTANCE.getInterpolationAxisType_Axis();
+
+        /**
+         * The meta object literal for the '<em><b>Interpolation Method</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute INTERPOLATION_AXIS_TYPE__INTERPOLATION_METHOD = eINSTANCE.getInterpolationAxisType_InterpolationMethod();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.InterpolationMethodTypeImpl <em>Interpolation Method Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.InterpolationMethodTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationMethodType()
+         * @generated
+         */
+        EClass INTERPOLATION_METHOD_TYPE = eINSTANCE.getInterpolationMethodType();
+
+        /**
+         * The meta object literal for the '<em><b>Interpolation Method</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute INTERPOLATION_METHOD_TYPE__INTERPOLATION_METHOD = eINSTANCE.getInterpolationMethodType_InterpolationMethod();
+
+        /**
+         * The meta object literal for the '{@link net.opengis.wcs20.impl.InterpolationTypeImpl <em>Interpolation Type</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see net.opengis.wcs20.impl.InterpolationTypeImpl
+         * @see net.opengis.wcs20.impl.Wcs20PackageImpl#getInterpolationType()
+         * @generated
+         */
+        EClass INTERPOLATION_TYPE = eINSTANCE.getInterpolationType();
+
+        /**
+         * The meta object literal for the '<em><b>Interpolation Method</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference INTERPOLATION_TYPE__INTERPOLATION_METHOD = eINSTANCE.getInterpolationType_InterpolationMethod();
+
+        /**
+         * The meta object literal for the '<em><b>Interpolation Axes</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference INTERPOLATION_TYPE__INTERPOLATION_AXES = eINSTANCE.getInterpolationType_InterpolationAxes();
 
         /**
          * The meta object literal for the '<em>Version String Type</em>' data type.

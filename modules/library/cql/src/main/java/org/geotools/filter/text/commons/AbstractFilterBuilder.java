@@ -19,11 +19,12 @@ package org.geotools.filter.text.commons;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
+import java.util.TimeZone;
 
 import org.geotools.filter.IllegalFilterException;
 import org.geotools.filter.text.cql2.CQLException;
@@ -373,35 +374,46 @@ public abstract class AbstractFilterBuilder {
 	 * @throws CQLException
 	 */
 	private Literal asLiteralDate(final String cqlDateTime) throws CQLException {
-		try {
-			
-			final String date = extractDate(cqlDateTime);
-			final String time = extractTime(cqlDateTime);
-			final String timeZone = extractTimeZone(cqlDateTime);
-			
-			StringBuilder format = new StringBuilder( "yyyy-MM-dd" );
-			if(! "".equals(time)){
-			    format.append("'T'HH:mm:ss"); 
-			}
-			if(! "".equals(timeZone)){
-				if("Z".equals(timeZone)){ // it is Zulu or 0000 zone (old semantic)
-					format.append("'Z'");
-				} else { // GMT zone [+|-]0000 // new semantic
-					format.append("Z");
-				}
-			}
-			String dateTimeFormat = format.toString();
-			DateFormat formatter = new SimpleDateFormat(dateTimeFormat);
 
-			Date dateTime = formatter.parse(date + "T"+ time + timeZone);
-			Literal literalDate = filterFactory.literal(dateTime);
+		try {
+			final String strDate = extractDate(cqlDateTime);
+			final String strTime = extractTime(cqlDateTime);
+			String timeZoneOffset = extractTimeZone(cqlDateTime);
+
+			StringBuilder format = new StringBuilder("yyyy-MM-dd");
+			if (!"".equals(strTime)) {
+				format.append(" HH:mm:ss");
+			}
+			TimeZone tz = null;
+			if (!"".equals(timeZoneOffset)) {
+				if ("Z".equals(timeZoneOffset)) { // it is Zulu or 0000 zone (old syntax)
+					timeZoneOffset = "GMT+00:00";
+				}
+				tz = TimeZone.getTimeZone(timeZoneOffset);
+			} else { // the time zone offset wasn't specified then the time zone is that provided by the host
+				tz = TimeZone.getDefault();
+			}
+			DateFormat formatter = new SimpleDateFormat(format.toString());
+			formatter.setTimeZone(tz);
+
+			Date date;
+			if (!"".equals(strTime)) {
+				date = formatter.parse(strDate + " " + strTime);
+			} else {
+				date = formatter.parse(strDate);
+			}
+			Literal literalDate = filterFactory.literal(date);
 
 			return literalDate;
 		} catch (java.text.ParseException e) {
 			throw new CQLException("Unsupported date time format: "
 					+ e.getMessage(), this.cqlSource);
 		}
+		
 	}
+	
+	
+	
 
 	/**
 	 * Extracts the time zone from the parameter
@@ -422,11 +434,11 @@ public abstract class AbstractFilterBuilder {
 		} 
 		index = time.indexOf("+");
 		if(index != -1 ){
-			return toTimeZone(time.substring(index));
+			return time.substring(index);
 		}
 		index = time.indexOf("-");
 		if(index != -1 ){
-			return toTimeZone(time.substring(index));
+			return time.substring(index);
 		} else {
 			return ""; // it will use the locale zone
 		}

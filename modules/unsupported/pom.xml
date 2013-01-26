@@ -155,12 +155,6 @@
        </modules>
      </profile>
      <profile>
-       <id>geogit-versioned</id>
-       <modules>
-         <module>geogit-versioned</module>
-       </modules>
-     </profile>
-     <profile>
        <id>wfs-ng</id>
        <modules>
          <module>wfs-ng</module>
@@ -174,15 +168,6 @@
        <modules>
          <module>transform</module>
 
-       </modules>
-     </profile>
-     <profile>
-       <id>csw</id>
-       <activation>
-         <property><name>all</name></property>
-       </activation>
-       <modules>
-         <module>csw</module>
        </modules>
      </profile>
      <profile>
@@ -202,7 +187,6 @@
          <module>mongodb</module>
          <module>property-ng</module>
          <module>shapefile-ng</module>
-         <module>csw</module>
        </modules>
      </profile>
   </profiles>
@@ -214,7 +198,6 @@
     <module>process</module>
     <module>wfs</module>
     <module>geojson</module>
-    <module>grid</module>
   </modules>
 
 </project>

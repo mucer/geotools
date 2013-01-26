@@ -95,7 +95,7 @@
       <details key="documentation" value="Prioritized sequence of zero or more GetCapabilities&#xA;      operation response formats desired by client, with preferred formats&#xA;      listed first. Each response format shall be identified by its MIME type.&#xA;      See AcceptFormats parameter use subclause for more&#xA;      information."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFormat" unique="false"
-        eType="#//MimeType">
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="OutputFormat"/>
@@ -109,7 +109,7 @@
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" unique="false"
-        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/XMLType.ecore#//Language">
+        lowerBound="1" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="Language"/>
@@ -129,7 +129,7 @@
       <details key="documentation" value="Prioritized sequence of one or more specification&#xA;      versions accepted by client, with preferred versions listed first. See&#xA;      Version negotiation subclause for more information."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" unique="false"
-        lowerBound="1" eType="#//VersionType">
+        lowerBound="1" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="Version"/>
@@ -1614,6 +1614,7 @@
         <details key="documentation" value="When omitted or not supported by server, server shall&#xA;        return latest complete service metadata document."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseUrl" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/XMLType.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GetResourceByIdType">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -2435,7 +2436,7 @@
       <details key="documentation" value="Unordered list of zero or more names of requested&#xA;      sections in complete service metadata document. Each Section value shall&#xA;      contain an allowed section name as specified by each OWS specification.&#xA;      See Sections parameter subclause for more information."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="section" unique="false"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/XMLType.ecore#//String">
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="Section"/>

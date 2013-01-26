@@ -19,16 +19,33 @@ import net.opengis.wcs20.DimensionSliceType;
 import net.opengis.wcs20.DimensionSubsetType;
 import net.opengis.wcs20.DimensionTrimType;
 import net.opengis.wcs20.DocumentRoot;
+import net.opengis.wcs20.ExtensionItemType;
 import net.opengis.wcs20.ExtensionType;
 import net.opengis.wcs20.GetCapabilitiesType;
 import net.opengis.wcs20.GetCoverageType;
+import net.opengis.wcs20.InterpolationAxesType;
+import net.opengis.wcs20.InterpolationAxisType;
+import net.opengis.wcs20.InterpolationMethodType;
+import net.opengis.wcs20.InterpolationType;
 import net.opengis.wcs20.OfferedCoverageType;
+import net.opengis.wcs20.RangeIntervalType;
+import net.opengis.wcs20.RangeItemType;
+import net.opengis.wcs20.RangeSubsetType;
 import net.opengis.wcs20.RequestBaseType;
+import net.opengis.wcs20.ScaleAxisByFactorType;
+import net.opengis.wcs20.ScaleAxisType;
+import net.opengis.wcs20.ScaleByFactorType;
+import net.opengis.wcs20.ScaleToExtentType;
+import net.opengis.wcs20.ScaleToSizeType;
+import net.opengis.wcs20.ScalingType;
 import net.opengis.wcs20.ServiceMetadataType;
 import net.opengis.wcs20.ServiceParametersType;
+import net.opengis.wcs20.TargetAxisExtentType;
+import net.opengis.wcs20.TargetAxisSizeType;
 import net.opengis.wcs20.Wcs20Factory;
 import net.opengis.wcs20.Wcs20Package;
 
+import net.opengis.wcs20.util.Wcs20Validator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -192,6 +209,118 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass extensionItemTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass rangeIntervalTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass rangeItemTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass rangeSubsetTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scaleAxisByFactorTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scaleAxisTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scaleByFactorTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scaleToExtentTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scaleToSizeTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass scalingTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass targetAxisExtentTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass targetAxisSizeTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass interpolationAxesTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass interpolationAxisTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass interpolationMethodTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass interpolationTypeEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EDataType versionStringTypeEDataType = null;
 
     /**
@@ -265,9 +394,19 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         // Initialize created meta-data
         theWcs20Package.initializePackageContents();
 
+        // Register package validator
+        EValidator.Registry.INSTANCE.put
+            (theWcs20Package, 
+             new EValidator.Descriptor() {
+                 public EValidator getEValidator() {
+                     return Wcs20Validator.INSTANCE;
+                 }
+             });
+
         // Mark meta-data to indicate it can't be changed
         theWcs20Package.freeze();
 
+  
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(Wcs20Package.eNS_URI, theWcs20Package);
         return theWcs20Package;
@@ -602,6 +741,15 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getDimensionSubsetType_CRS() {
+        return (EAttribute)dimensionSubsetTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getDimensionTrimType() {
         return dimensionTrimTypeEClass;
     }
@@ -836,8 +984,8 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getExtensionType_Any() {
-        return (EAttribute)extensionTypeEClass.getEStructuralFeatures().get(0);
+    public EReference getExtensionType_Contents() {
+        return (EReference)extensionTypeEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -980,6 +1128,15 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getRequestBaseType_BaseUrl() {
+        return (EAttribute)requestBaseTypeEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getServiceMetadataType() {
         return serviceMetadataTypeEClass;
     }
@@ -1054,6 +1211,420 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
      */
     public EClass getObject() {
         return objectEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getExtensionItemType() {
+        return extensionItemTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtensionItemType_Name() {
+        return (EAttribute)extensionItemTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtensionItemType_Namespace() {
+        return (EAttribute)extensionItemTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtensionItemType_SimpleContent() {
+        return (EAttribute)extensionItemTypeEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getExtensionItemType_ObjectContent() {
+        return (EReference)extensionItemTypeEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getRangeIntervalType() {
+        return rangeIntervalTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRangeIntervalType_StartComponent() {
+        return (EAttribute)rangeIntervalTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRangeIntervalType_EndComponent() {
+        return (EAttribute)rangeIntervalTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getRangeItemType() {
+        return rangeItemTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRangeItemType_RangeComponent() {
+        return (EAttribute)rangeItemTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getRangeItemType_RangeInterval() {
+        return (EReference)rangeItemTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getRangeSubsetType() {
+        return rangeSubsetTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getRangeSubsetType_RangeItems() {
+        return (EReference)rangeSubsetTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScaleAxisByFactorType() {
+        return scaleAxisByFactorTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScaleAxisByFactorType_ScaleAxis() {
+        return (EReference)scaleAxisByFactorTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScaleAxisType() {
+        return scaleAxisTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getScaleAxisType_Axis() {
+        return (EAttribute)scaleAxisTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getScaleAxisType_ScaleFactor() {
+        return (EAttribute)scaleAxisTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScaleByFactorType() {
+        return scaleByFactorTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getScaleByFactorType_ScaleFactor() {
+        return (EAttribute)scaleByFactorTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScaleToExtentType() {
+        return scaleToExtentTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScaleToExtentType_TargetAxisExtent() {
+        return (EReference)scaleToExtentTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScaleToSizeType() {
+        return scaleToSizeTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScaleToSizeType_TargetAxisSize() {
+        return (EReference)scaleToSizeTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getScalingType() {
+        return scalingTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScalingType_ScaleByFactor() {
+        return (EReference)scalingTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScalingType_ScaleAxesByFactor() {
+        return (EReference)scalingTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScalingType_ScaleToSize() {
+        return (EReference)scalingTypeEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getScalingType_ScaleToExtent() {
+        return (EReference)scalingTypeEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getTargetAxisExtentType() {
+        return targetAxisExtentTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTargetAxisExtentType_Axis() {
+        return (EAttribute)targetAxisExtentTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTargetAxisExtentType_Low() {
+        return (EAttribute)targetAxisExtentTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTargetAxisExtentType_High() {
+        return (EAttribute)targetAxisExtentTypeEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getTargetAxisSizeType() {
+        return targetAxisSizeTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTargetAxisSizeType_Axis() {
+        return (EAttribute)targetAxisSizeTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTargetAxisSizeType_TargetSize() {
+        return (EAttribute)targetAxisSizeTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getInterpolationAxesType() {
+        return interpolationAxesTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getInterpolationAxesType_InterpolationAxis() {
+        return (EReference)interpolationAxesTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getInterpolationAxisType() {
+        return interpolationAxisTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getInterpolationAxisType_Axis() {
+        return (EAttribute)interpolationAxisTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getInterpolationAxisType_InterpolationMethod() {
+        return (EAttribute)interpolationAxisTypeEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getInterpolationMethodType() {
+        return interpolationMethodTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getInterpolationMethodType_InterpolationMethod() {
+        return (EAttribute)interpolationMethodTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getInterpolationType() {
+        return interpolationTypeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getInterpolationType_InterpolationMethod() {
+        return (EReference)interpolationTypeEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getInterpolationType_InterpolationAxes() {
+        return (EReference)interpolationTypeEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -1156,6 +1727,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
 
         dimensionSubsetTypeEClass = createEClass(DIMENSION_SUBSET_TYPE);
         createEAttribute(dimensionSubsetTypeEClass, DIMENSION_SUBSET_TYPE__DIMENSION);
+        createEAttribute(dimensionSubsetTypeEClass, DIMENSION_SUBSET_TYPE__CRS);
 
         dimensionTrimTypeEClass = createEClass(DIMENSION_TRIM_TYPE);
         createEAttribute(dimensionTrimTypeEClass, DIMENSION_TRIM_TYPE__TRIM_LOW);
@@ -1185,7 +1757,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         createEReference(documentRootEClass, DOCUMENT_ROOT__SERVICE_PARAMETERS);
 
         extensionTypeEClass = createEClass(EXTENSION_TYPE);
-        createEAttribute(extensionTypeEClass, EXTENSION_TYPE__ANY);
+        createEReference(extensionTypeEClass, EXTENSION_TYPE__CONTENTS);
 
         getCapabilitiesTypeEClass = createEClass(GET_CAPABILITIES_TYPE);
         createEAttribute(getCapabilitiesTypeEClass, GET_CAPABILITIES_TYPE__SERVICE);
@@ -1205,6 +1777,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         createEReference(requestBaseTypeEClass, REQUEST_BASE_TYPE__EXTENSION);
         createEAttribute(requestBaseTypeEClass, REQUEST_BASE_TYPE__SERVICE);
         createEAttribute(requestBaseTypeEClass, REQUEST_BASE_TYPE__VERSION);
+        createEAttribute(requestBaseTypeEClass, REQUEST_BASE_TYPE__BASE_URL);
 
         serviceMetadataTypeEClass = createEClass(SERVICE_METADATA_TYPE);
         createEAttribute(serviceMetadataTypeEClass, SERVICE_METADATA_TYPE__FORMAT_SUPPORTED);
@@ -1217,6 +1790,68 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         createEReference(serviceParametersTypeEClass, SERVICE_PARAMETERS_TYPE__EXTENSION);
 
         objectEClass = createEClass(OBJECT);
+
+        extensionItemTypeEClass = createEClass(EXTENSION_ITEM_TYPE);
+        createEAttribute(extensionItemTypeEClass, EXTENSION_ITEM_TYPE__NAME);
+        createEAttribute(extensionItemTypeEClass, EXTENSION_ITEM_TYPE__NAMESPACE);
+        createEAttribute(extensionItemTypeEClass, EXTENSION_ITEM_TYPE__SIMPLE_CONTENT);
+        createEReference(extensionItemTypeEClass, EXTENSION_ITEM_TYPE__OBJECT_CONTENT);
+
+        rangeIntervalTypeEClass = createEClass(RANGE_INTERVAL_TYPE);
+        createEAttribute(rangeIntervalTypeEClass, RANGE_INTERVAL_TYPE__START_COMPONENT);
+        createEAttribute(rangeIntervalTypeEClass, RANGE_INTERVAL_TYPE__END_COMPONENT);
+
+        rangeItemTypeEClass = createEClass(RANGE_ITEM_TYPE);
+        createEAttribute(rangeItemTypeEClass, RANGE_ITEM_TYPE__RANGE_COMPONENT);
+        createEReference(rangeItemTypeEClass, RANGE_ITEM_TYPE__RANGE_INTERVAL);
+
+        rangeSubsetTypeEClass = createEClass(RANGE_SUBSET_TYPE);
+        createEReference(rangeSubsetTypeEClass, RANGE_SUBSET_TYPE__RANGE_ITEMS);
+
+        scaleAxisByFactorTypeEClass = createEClass(SCALE_AXIS_BY_FACTOR_TYPE);
+        createEReference(scaleAxisByFactorTypeEClass, SCALE_AXIS_BY_FACTOR_TYPE__SCALE_AXIS);
+
+        scaleAxisTypeEClass = createEClass(SCALE_AXIS_TYPE);
+        createEAttribute(scaleAxisTypeEClass, SCALE_AXIS_TYPE__AXIS);
+        createEAttribute(scaleAxisTypeEClass, SCALE_AXIS_TYPE__SCALE_FACTOR);
+
+        scaleByFactorTypeEClass = createEClass(SCALE_BY_FACTOR_TYPE);
+        createEAttribute(scaleByFactorTypeEClass, SCALE_BY_FACTOR_TYPE__SCALE_FACTOR);
+
+        scaleToExtentTypeEClass = createEClass(SCALE_TO_EXTENT_TYPE);
+        createEReference(scaleToExtentTypeEClass, SCALE_TO_EXTENT_TYPE__TARGET_AXIS_EXTENT);
+
+        scaleToSizeTypeEClass = createEClass(SCALE_TO_SIZE_TYPE);
+        createEReference(scaleToSizeTypeEClass, SCALE_TO_SIZE_TYPE__TARGET_AXIS_SIZE);
+
+        scalingTypeEClass = createEClass(SCALING_TYPE);
+        createEReference(scalingTypeEClass, SCALING_TYPE__SCALE_BY_FACTOR);
+        createEReference(scalingTypeEClass, SCALING_TYPE__SCALE_AXES_BY_FACTOR);
+        createEReference(scalingTypeEClass, SCALING_TYPE__SCALE_TO_SIZE);
+        createEReference(scalingTypeEClass, SCALING_TYPE__SCALE_TO_EXTENT);
+
+        targetAxisExtentTypeEClass = createEClass(TARGET_AXIS_EXTENT_TYPE);
+        createEAttribute(targetAxisExtentTypeEClass, TARGET_AXIS_EXTENT_TYPE__AXIS);
+        createEAttribute(targetAxisExtentTypeEClass, TARGET_AXIS_EXTENT_TYPE__LOW);
+        createEAttribute(targetAxisExtentTypeEClass, TARGET_AXIS_EXTENT_TYPE__HIGH);
+
+        targetAxisSizeTypeEClass = createEClass(TARGET_AXIS_SIZE_TYPE);
+        createEAttribute(targetAxisSizeTypeEClass, TARGET_AXIS_SIZE_TYPE__AXIS);
+        createEAttribute(targetAxisSizeTypeEClass, TARGET_AXIS_SIZE_TYPE__TARGET_SIZE);
+
+        interpolationAxesTypeEClass = createEClass(INTERPOLATION_AXES_TYPE);
+        createEReference(interpolationAxesTypeEClass, INTERPOLATION_AXES_TYPE__INTERPOLATION_AXIS);
+
+        interpolationAxisTypeEClass = createEClass(INTERPOLATION_AXIS_TYPE);
+        createEAttribute(interpolationAxisTypeEClass, INTERPOLATION_AXIS_TYPE__AXIS);
+        createEAttribute(interpolationAxisTypeEClass, INTERPOLATION_AXIS_TYPE__INTERPOLATION_METHOD);
+
+        interpolationMethodTypeEClass = createEClass(INTERPOLATION_METHOD_TYPE);
+        createEAttribute(interpolationMethodTypeEClass, INTERPOLATION_METHOD_TYPE__INTERPOLATION_METHOD);
+
+        interpolationTypeEClass = createEClass(INTERPOLATION_TYPE);
+        createEReference(interpolationTypeEClass, INTERPOLATION_TYPE__INTERPOLATION_METHOD);
+        createEReference(interpolationTypeEClass, INTERPOLATION_TYPE__INTERPOLATION_AXES);
 
         // Create data types
         versionStringTypeEDataType = createEDataType(VERSION_STRING_TYPE);
@@ -1305,13 +1940,14 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         initEReference(getCoverageSummaryType_Metadata(), theOws20Package.getMetadataType(), null, "metadata", null, 0, -1, CoverageSummaryType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(describeCoverageTypeEClass, DescribeCoverageType.class, "DescribeCoverageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getDescribeCoverageType_CoverageId(), theXMLTypePackage.getNCName(), "coverageId", null, 1, 1, DescribeCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDescribeCoverageType_CoverageId(), ecorePackage.getEString(), "coverageId", null, 1, -1, DescribeCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(dimensionSliceTypeEClass, DimensionSliceType.class, "DimensionSliceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDimensionSliceType_SlicePoint(), theXMLTypePackage.getString(), "slicePoint", null, 1, 1, DimensionSliceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(dimensionSubsetTypeEClass, DimensionSubsetType.class, "DimensionSubsetType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDimensionSubsetType_Dimension(), theXMLTypePackage.getNCName(), "dimension", null, 1, 1, DimensionSubsetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getDimensionSubsetType_CRS(), ecorePackage.getEString(), "cRS", null, 0, 1, DimensionSubsetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(dimensionTrimTypeEClass, DimensionTrimType.class, "DimensionTrimType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getDimensionTrimType_TrimLow(), theXMLTypePackage.getString(), "trimLow", null, 0, 1, DimensionTrimType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1341,7 +1977,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         initEReference(getDocumentRoot_ServiceParameters(), this.getServiceParametersType(), null, "serviceParameters", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(extensionTypeEClass, ExtensionType.class, "ExtensionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getExtensionType_Any(), theEcorePackage.getEFeatureMapEntry(), "any", null, 0, -1, ExtensionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getExtensionType_Contents(), this.getExtensionItemType(), null, "contents", null, 0, -1, ExtensionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(getCapabilitiesTypeEClass, GetCapabilitiesType.class, "GetCapabilitiesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getGetCapabilitiesType_Service(), theOws20Package.getServiceType(), "service", "WCS", 1, 1, GetCapabilitiesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1349,7 +1985,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         initEClass(getCoverageTypeEClass, GetCoverageType.class, "GetCoverageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getGetCoverageType_CoverageId(), theXMLTypePackage.getNCName(), "coverageId", null, 1, 1, GetCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getGetCoverageType_DimensionSubsetGroup(), theEcorePackage.getEFeatureMapEntry(), "dimensionSubsetGroup", null, 0, -1, GetCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getGetCoverageType_DimensionSubset(), this.getDimensionSubsetType(), null, "dimensionSubset", null, 0, -1, GetCoverageType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEReference(getGetCoverageType_DimensionSubset(), this.getDimensionSubsetType(), null, "dimensionSubset", null, 0, -1, GetCoverageType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
         initEAttribute(getGetCoverageType_Format(), theXMLTypePackage.getAnyURI(), "format", null, 0, 1, GetCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getGetCoverageType_MediaType(), theXMLTypePackage.getAnyURI(), "mediaType", null, 0, 1, GetCoverageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1361,6 +1997,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         initEReference(getRequestBaseType_Extension(), this.getExtensionType(), null, "extension", null, 0, 1, RequestBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getRequestBaseType_Service(), theXMLTypePackage.getString(), "service", "WCS", 1, 1, RequestBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getRequestBaseType_Version(), this.getVersionStringType_1(), "version", null, 1, 1, RequestBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getRequestBaseType_BaseUrl(), theXMLTypePackage.getString(), "baseUrl", null, 0, 1, RequestBaseType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(serviceMetadataTypeEClass, ServiceMetadataType.class, "ServiceMetadataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getServiceMetadataType_FormatSupported(), theXMLTypePackage.getAnyURI(), "formatSupported", null, 1, 1, ServiceMetadataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1373,6 +2010,68 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
         initEReference(getServiceParametersType_Extension(), this.getExtensionType(), null, "extension", null, 0, 1, ServiceParametersType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(objectEClass, Object.class, "Object", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+        initEClass(extensionItemTypeEClass, ExtensionItemType.class, "ExtensionItemType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getExtensionItemType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExtensionItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getExtensionItemType_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, ExtensionItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getExtensionItemType_SimpleContent(), ecorePackage.getEString(), "simpleContent", null, 0, 1, ExtensionItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getExtensionItemType_ObjectContent(), this.getObject(), null, "objectContent", null, 0, 1, ExtensionItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(rangeIntervalTypeEClass, RangeIntervalType.class, "RangeIntervalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRangeIntervalType_StartComponent(), ecorePackage.getEString(), "startComponent", null, 0, 1, RangeIntervalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getRangeIntervalType_EndComponent(), ecorePackage.getEString(), "endComponent", null, 0, 1, RangeIntervalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(rangeItemTypeEClass, RangeItemType.class, "RangeItemType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRangeItemType_RangeComponent(), ecorePackage.getEString(), "rangeComponent", null, 0, 1, RangeItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getRangeItemType_RangeInterval(), this.getRangeIntervalType(), null, "rangeInterval", null, 0, 1, RangeItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(rangeSubsetTypeEClass, RangeSubsetType.class, "RangeSubsetType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getRangeSubsetType_RangeItems(), this.getRangeItemType(), null, "rangeItems", null, 0, -1, RangeSubsetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scaleAxisByFactorTypeEClass, ScaleAxisByFactorType.class, "ScaleAxisByFactorType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getScaleAxisByFactorType_ScaleAxis(), this.getScaleAxisType(), null, "scaleAxis", null, 0, -1, ScaleAxisByFactorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scaleAxisTypeEClass, ScaleAxisType.class, "ScaleAxisType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getScaleAxisType_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, ScaleAxisType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getScaleAxisType_ScaleFactor(), ecorePackage.getEDouble(), "scaleFactor", null, 0, 1, ScaleAxisType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scaleByFactorTypeEClass, ScaleByFactorType.class, "ScaleByFactorType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getScaleByFactorType_ScaleFactor(), ecorePackage.getEDouble(), "scaleFactor", null, 0, 1, ScaleByFactorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scaleToExtentTypeEClass, ScaleToExtentType.class, "ScaleToExtentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getScaleToExtentType_TargetAxisExtent(), this.getTargetAxisExtentType(), null, "targetAxisExtent", null, 0, -1, ScaleToExtentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scaleToSizeTypeEClass, ScaleToSizeType.class, "ScaleToSizeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getScaleToSizeType_TargetAxisSize(), this.getTargetAxisSizeType(), null, "targetAxisSize", null, 0, -1, ScaleToSizeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(scalingTypeEClass, ScalingType.class, "ScalingType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getScalingType_ScaleByFactor(), this.getScaleByFactorType(), null, "scaleByFactor", null, 0, 1, ScalingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getScalingType_ScaleAxesByFactor(), this.getScaleAxisByFactorType(), null, "scaleAxesByFactor", null, 0, 1, ScalingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getScalingType_ScaleToSize(), this.getScaleToSizeType(), null, "scaleToSize", null, 0, 1, ScalingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getScalingType_ScaleToExtent(), this.getScaleToExtentType(), null, "scaleToExtent", null, 0, 1, ScalingType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(targetAxisExtentTypeEClass, TargetAxisExtentType.class, "TargetAxisExtentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getTargetAxisExtentType_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, TargetAxisExtentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getTargetAxisExtentType_Low(), ecorePackage.getEDouble(), "low", null, 0, 1, TargetAxisExtentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getTargetAxisExtentType_High(), ecorePackage.getEDouble(), "high", null, 0, 1, TargetAxisExtentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(targetAxisSizeTypeEClass, TargetAxisSizeType.class, "TargetAxisSizeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getTargetAxisSizeType_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, TargetAxisSizeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getTargetAxisSizeType_TargetSize(), ecorePackage.getEDouble(), "targetSize", null, 0, 1, TargetAxisSizeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(interpolationAxesTypeEClass, InterpolationAxesType.class, "InterpolationAxesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getInterpolationAxesType_InterpolationAxis(), this.getInterpolationAxisType(), null, "interpolationAxis", null, 0, -1, InterpolationAxesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(interpolationAxisTypeEClass, InterpolationAxisType.class, "InterpolationAxisType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getInterpolationAxisType_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, InterpolationAxisType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getInterpolationAxisType_InterpolationMethod(), ecorePackage.getEString(), "interpolationMethod", null, 0, 1, InterpolationAxisType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(interpolationMethodTypeEClass, InterpolationMethodType.class, "InterpolationMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getInterpolationMethodType_InterpolationMethod(), ecorePackage.getEString(), "interpolationMethod", null, 0, 1, InterpolationMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(interpolationTypeEClass, InterpolationType.class, "InterpolationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getInterpolationType_InterpolationMethod(), this.getInterpolationMethodType(), null, "interpolationMethod", null, 0, 1, InterpolationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getInterpolationType_InterpolationAxes(), this.getInterpolationAxesType(), null, "interpolationAxes", null, 0, 1, InterpolationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
         initEDataType(versionStringTypeEDataType, String.class, "VersionStringType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2405,7 +3104,7 @@ public class Wcs20PackageImpl extends EPackageImpl implements Wcs20Package {
              "kind", "elementOnly"
            });		
         addAnnotation
-          (getExtensionType_Any(), 
+          (getExtensionType_Contents(), 
            source, 
            new String[] {
              "kind", "elementWildcard",
